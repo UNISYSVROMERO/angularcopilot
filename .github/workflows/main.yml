@@ -1,0 +1,17 @@
+name: prueba testing
+on:
+  push:
+    branches: [ "master" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Comprobar respositorio
+      uses: actions/checkout@v2
+    - name: Configurar nodejs
+      uses: actions/setup-node@v2
+      with: ##con variable
+        node-version: '20'
+    - name: Ejecutar test
+      run: npm test
+
